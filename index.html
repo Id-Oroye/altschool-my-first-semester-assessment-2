@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scissor: URL Shortening Solution</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Gilroy', 'Urbanist', 'system-ui', 'sans-serif'] },
+          colors: {
+            primary: {
+              100: '#3284FF',
+              200: '#4991FF',
+              300: '#0065FE',
+              400: '#005AE2',
+            },
+            ink: '#141414',       
+            navy: '#1E3448',      
+            neutral900: '#071827',
+            neutral800: '#112232',
+            softbg: '#F9FBFD',
+            line: '#D6D6D6',
+          },
+          boxShadow: { card: '0 4px 8px rgba(0,0,0,0.05)' },
+        },
+      },
+    };
+  </script>
+</head>
+
+<body class="font-sans text-ink bg-white antialiased overflow-x-hidden">
+
+  <header class="absolute inset-x-0 top-0 z-30">
+    <div class="mx-auto flex max-w-[1150px] items-center justify-between px-5 py-3">
+      <a href="#" class="flex items-center gap-2 p-2 text-primary-300">
+        <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3" />
+          <line x1="3" y1="21" x2="21" y2="3" />
+        </svg>
+        <span class="h-6 w-px bg-primary-300"></span>
+        <span class="text-2xl font-bold leading-8">SCISSOR</span>
+      </a>
+
+      <nav class="hidden items-center gap-10 text-[18px] font-medium lg:flex">
+        <a href="#" class="text-primary-300">My URLs</a>
+        <a href="#features" class="flex items-center gap-1">
+          Features
+          <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9" /></svg>
+        </a>
+        <a href="#pricing">Pricing</a>
+        <a href="#analytics">Analytics</a>
+        <a href="#faqs">FAQs</a>
+      </nav>
+
+      <div class="flex items-center gap-6">
+        <a href="#" class="hidden font-semibold text-primary-300 sm:block">Log in</a>
+        <a href="#" class="flex h-11 items-center justify-center rounded-full bg-primary-300 px-6 font-semibold text-white transition hover:bg-primary-400">Try for free</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="relative min-h-[1024px] overflow-hidden bg-white px-5 pt-40 pb-40 lg:pt-[162px]">
+      <div aria-hidden="true" class="pointer-events-none absolute left-1/2 top-0 h-[405px] w-[1058px] max-w-none -translate-x-1/2">
+        <div class="absolute left-0 top-0 h-[215px] w-[200px] rounded-full bg-[#ffe8d6] opacity-70 blur-[90px]"></div>
+        <div class="absolute left-[270px] top-3 h-[215px] w-[200px] rounded-full bg-[#fff6c9] opacity-70 blur-[90px]"></div>
+        <div class="absolute right-0 top-[112px] h-[293px] w-[271px] rounded-full bg-[#dbeaff] opacity-80 blur-[100px]"></div>
+      </div>
+
+      <div class="relative mx-auto flex max-w-[948px] flex-col items-center gap-8 text-center">
+        <div class="flex flex-col items-center gap-2">
+          <h1 class="text-3xl font-bold leading-snug sm:text-4xl md:text-5xl md:leading-[96px]">
+            Optimize Your Online Experience with Our Advanced
+            <span class="relative inline-block text-primary-400">
+              URL Shortening
+              <svg class="absolute -bottom-1 left-1/2 hidden h-5 w-[174px] -translate-x-1/2 md:block" viewBox="0 0 174 20" fill="none" aria-hidden="true">
+                <path d="M2 14 C 50 8, 120 5, 172 3" stroke="#0065FE" stroke-width="5" stroke-linecap="round" />
+              </svg>
+            </span>
+            Solution
+          </h1>
+          <p class="mt-2 max-w-[781px] text-base font-medium leading-7 md:text-[18px]">
+            Personalize your shortened URLs to align with your brand identity. Utilize custom slugs, branded links, and domain customization options to reinforce your brand presence and enhance user engagement.
+          </p>
+        </div>
+
+        <div class="flex items-center gap-14">
+          <a href="#" class="flex h-11 w-[142px] items-center justify-center rounded-full bg-primary-300 font-semibold text-white transition hover:bg-primary-400">Sign Up</a>
+          <a href="#features" class="font-semibold text-primary-300">Learn more</a>
+        </div>
+      </div>
+
+      <div class="relative mx-auto mt-16 flex max-w-[768px] justify-center">
+        <div aria-hidden="true" class="absolute -left-10 top-6 h-[250px] w-[240px] -rotate-[30deg] rounded-[50%] bg-[#e4ecf7]"></div>
+        <div class="relative flex w-full flex-col items-center gap-4 rounded-3xl border-[0.5px] border-primary-400 bg-white/10 px-6 py-10 backdrop-blur-[60px] md:px-[60px]">
+          <div class="flex items-center gap-5 text-ink">
+            <div class="flex">
+              <svg class="-mr-2 h-14 w-14 md:h-20 md:w-20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3" /><line x1="8" y1="12" x2="16" y2="12" /></svg>
+              <svg class="-mr-2 h-14 w-14 md:h-20 md:w-20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3" /><line x1="8" y1="12" x2="16" y2="12" /></svg>
+              <svg class="h-14 w-14 md:h-20 md:w-20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3" /><line x1="8" y1="12" x2="16" y2="12" /></svg>
+            </div>
+            <svg class="h-3 w-10 text-primary-300" viewBox="0 0 40 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="0" y1="6" x2="38" y2="6" /><polyline points="32 1 38 6 32 11" /></svg>
+            <svg class="h-14 w-14 md:h-20 md:w-20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3" /><line x1="8" y1="12" x2="16" y2="12" /></svg>
+          </div>
+          <p class="max-w-[648px] text-center leading-6">
+            Seamlessly transform your long URLs into <b class="font-semibold">concise</b> and <b class="font-semibold">shareable links</b> with just few clicks.
+          </p>
+        </div>
+      </div>
+
+      <div aria-hidden="true" class="absolute inset-x-0 bottom-0 h-[93px] bg-gradient-to-b from-[#f3f4f6] to-[#e5e7eb]" style="clip-path: polygon(8% 0, 92% 0, 100% 100%, 0 100%)"></div>
+      <div aria-hidden="true" class="absolute bottom-5 left-1/2 h-[49px] w-[956px] max-w-[90%] -translate-x-1/2 rounded-[50%] bg-[#dde6f0] shadow-inner"></div>
+    </section>
+
+    <section id="features">
+      <!-- stats band -->
+      <div class="bg-softbg px-5 py-[60px]">
+        <div class="mx-auto flex max-w-[1160px] flex-col items-center gap-10 lg:flex-row lg:gap-[120px]">
+          <h2 class="w-[337px] max-w-full text-[40px] font-bold leading-[48px]">
+            One Stop.<br />Four <span class="text-primary-400">Possibilities</span>.
+          </h2>
+          <div class="grid grid-cols-2 gap-x-10 gap-y-8 md:grid-cols-4 md:gap-x-[72px]">
+            <div><p class="text-[32px] font-semibold leading-10">3M</p><p class="mt-1 font-medium leading-6">Active users</p></div>
+            <div><p class="text-[32px] font-semibold leading-10">60M</p><p class="mt-1 w-[123px] font-medium leading-6">Links &amp; QR codes created</p></div>
+            <div><p class="text-[32px] font-semibold leading-10">1B</p><p class="mt-1 w-[143px] font-medium leading-6">Clicked &amp; Scanned connections</p></div>
+            <div><p class="text-[32px] font-semibold leading-10">300k</p><p class="mt-1 font-medium leading-6">App Integrations</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="analytics" class="mx-auto flex max-w-[1202px] flex-col gap-16 px-5 py-24 lg:flex-row lg:gap-24">
+        <div class="flex flex-col gap-4 lg:w-[398px] lg:shrink-0">
+          <div class="flex items-center gap-4">
+            <span class="h-12 w-0.5 bg-gradient-to-b from-navy to-transparent"></span>
+            <h2 class="text-[40px] font-bold leading-8">Why choose <span class="text-primary-400">Scissors</span></h2>
+          </div>
+          <p class="pl-7 font-medium leading-7">
+            Scissors is the hub of everything that has to do with your link management. We shorten your URLs, allow you creating custom ones for your personal, business, event usage. Our swift QR code creation, management and usage tracking with advance analytics for all of these is second to none.
+          </p>
+        </div>
+
+        <div class="grid flex-1 gap-x-7 gap-y-16 sm:grid-cols-2">
+          <div class="flex flex-col gap-10">
+            <span class="flex h-14 w-14 items-center justify-center rounded-full bg-primary-300/10 text-primary-300">
+              <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3" /><line x1="8" y1="12" x2="16" y2="12" /></svg>
+            </span>
+            <div class="flex flex-col gap-4">
+              <h3 class="text-[32px] font-semibold leading-7">URL Shortening</h3>
+              <p class="font-medium leading-6">Scissor allows you to shorten URLs of your business, events. Shorten your URL at scale, URL redirects.</p>
+            </div>
+          </div>
+          
+          <div class="flex flex-col gap-10">
+            <span class="flex h-14 w-14 items-center justify-center rounded-full bg-primary-300/10 text-primary-300">
+              <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" /><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" /></svg>
+            </span>
+            <div class="flex flex-col gap-4">
+              <h3 class="text-[32px] font-semibold leading-7">Custom URLs</h3>
+              <p class="font-medium leading-6">With Scissor, you can create custom URLs, with the length you want! A solution for socials and businesses.</p>
+            </div>
+          </div>
+          
+          <div class="flex flex-col gap-10">
+            <span class="flex h-14 w-14 items-center justify-center rounded-full bg-primary-300/10 text-primary-300">
+              <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" /><rect x="14" y="3" width="7" height="7" /><rect x="14" y="14" width="7" height="7" /><rect x="3" y="14" width="7" height="7" /></svg>
+            </span>
+            <div class="flex flex-col gap-4">
+              <h3 class="text-[32px] font-semibold leading-7">QR Codes</h3>
+              <p class="font-medium leading-6">Generate QR codes to your business, events. Bring your audience and customers to your doorstep with this scan and go solution.</p>
+            </div>
+          </div>
+          
+          <div class="flex flex-col gap-10">
+            <span class="flex h-14 w-14 items-center justify-center rounded-full bg-primary-300/10 text-primary-300">
+              <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12" /></svg>
+            </span>
+            <div class="flex flex-col gap-4">
+              <h3 class="text-[32px] font-semibold leading-7">Data Analytics</h3>
+              <p class="font-medium leading-6">Receive data on the usage of either your shortened URL, custom URLs or generated QR codes. Embedded to monitor progress.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="px-5 pb-24 pt-10">
+      <div class="mx-auto flex max-w-[576px] items-start gap-4">
+        <span class="h-12 w-0.5 shrink-0 bg-gradient-to-b from-navy to-transparent"></span>
+        <div class="text-center">
+          <h2 class="text-[40px] font-bold leading-[48px]">A <span class="text-primary-400">price perfect</span> for your needs.</h2>
+          <p class="mx-auto mt-2 max-w-[556px] font-medium leading-6">From catering for your personal, business, event, socials needs, you can be rest assured we have you in mind in our pricing.</p>
+        </div>
+      </div>
+
+      <div class="mx-auto mt-16 flex max-w-[1088px] flex-col items-stretch gap-6 lg:flex-row lg:items-center lg:gap-0">
+        <!-- Basic -->
+        <div class="rounded-xl border-[0.4px] border-primary-400 bg-white px-10 py-12 shadow-card lg:min-h-[455px] lg:flex-1 lg:pl-[87px]">
+          <h3 class="text-2xl font-medium leading-8">Basic</h3>
+          <p class="mt-9 text-[40px] font-bold leading-[48px]">Free</p>
+          <p class="mt-2 text-xl font-medium leading-8">Free plan for all users</p>
+          <ul class="mt-4 flex flex-col gap-6 text-sm font-medium leading-6">
+            <li class="flex items-center gap-2"><svg class="h-4 w-4 text-primary-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>Unlimited URL Shortening</li>
+            <li class="flex items-center gap-2"><svg class="h-4 w-4 text-primary-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>Basic Link Analytics</li>
+            <li class="flex items-center gap-2"><svg class="h-4 w-4 text-primary-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>Customizable Short Links</li>
+            <li class="flex items-center gap-2"><svg class="h-4 w-4 text-primary-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>Standard Support</li>
+            <li class="flex items-center gap-2"><svg class="h-4 w-4 text-primary-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>Ad-supported</li>
+          </ul>
+        </div>
+
+        <div class="relative z-10 rounded-xl bg-gradient-to-b from-navy to-navy/0 px-10 py-24 text-white shadow-card lg:-mx-5 lg:min-h-[627px] lg:w-[410px] lg:shrink-0 lg:px-[65px]" style="background-image: linear-gradient(to bottom, #1e3448 99.99%, rgba(30,52,72,0))">
+          <h3 class="text-2xl font-medium leading-8">Professional</h3>
+          <p class="mt-6 text-[40px] font-bold leading-[48px]">$15/month</p>
+          <p class="mt-2 text-xl font-medium leading-8">Ideal for business creators</p>
+          <ul class="mt-6 flex flex-col gap-6 text-sm font-medium leading-6">
+            <li class="flex items-center gap-2"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>Enhanced Link Analytics</li>
+            <li class="flex items-center gap-2"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>Custom Branded Domains</li>
+            <li class="flex items-center gap-2"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>Advanced Link Customization</li>
+            <li class="flex items-center gap-2"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>Priority Support</li>
+            <li class="flex items-center gap-2"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>Ad-free Experience</li>
+          </ul>
+        </div>
+
+        <div class="rounded-xl border-[0.4px] border-primary-400 bg-white px-10 py-12 shadow-card lg:min-h-[455px] lg:flex-1 lg:pl-[86px]">
+          <h3 class="text-2xl font-medium leading-8">Teams</h3>
+          <p class="mt-9 text-[40px] font-bold leading-[48px]">$25/month</p>
+          <p class="mt-2 text-xl font-medium leading-8">Share with up to 10 users</p>
+          <ul class="mt-4 flex flex-col gap-6 text-sm font-medium leading-6">
+            <li class="flex items-center gap-2"><svg class="h-4 w-4 text-primary-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>Team Collaboration</li>
+            <li class="flex items-center gap-2"><svg class="h-4 w-4 text-primary-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>User Roles and Permissions</li>
+            <li class="flex items-center gap-2"><svg class="h-4 w-4 text-primary-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>Enhanced Security</li>
+            <li class="flex items-center gap-2"><svg class="h-4 w-4 text-primary-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>API Access</li>
+            <li class="flex items-center gap-2"><svg class="h-4 w-4 text-primary-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>Dedicated Account Manager</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-16 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <a href="#" class="flex h-12 w-[200px] items-center justify-center rounded-full border border-primary-300 font-semibold text-primary-300 transition hover:bg-primary-300/5">Get Custom Pricing</a>
+        <a href="#" class="flex h-12 w-[200px] items-center justify-center rounded-full bg-primary-300 font-semibold text-white transition hover:bg-primary-400">Select Pricing</a>
+      </div>
+    </section>
+
+    <section class="relative overflow-hidden px-5 py-20" style="background-image: linear-gradient(to bottom, #1e3448 99.99%, rgba(30,52,72,0))">
+      <div aria-hidden="true" class="pointer-events-none absolute -left-40 top-0 h-[420px] w-[520px] rounded-[45%] bg-[#3b6a8a]/40 blur-sm"></div>
+      <div aria-hidden="true" class="pointer-events-none absolute -right-32 -top-10 h-[400px] w-[460px] rounded-[45%] bg-[#2a5d9f]/40 blur-sm"></div>
+
+      <form id="trim-form" class="relative mx-auto w-full max-w-[476px] rounded-xl bg-white p-6 sm:p-[42px]" novalidate>
+        <div class="flex flex-col gap-6">
+          <input type="url" id="long-url" placeholder="Paste URL here..." class="h-[55px] w-full rounded-xl border border-primary-100 px-6 text-xs font-medium text-primary-100 placeholder-primary-100 outline-none focus:ring-2 focus:ring-primary-100/30" />
+          <div class="flex flex-col gap-3 sm:flex-row">
+            <div class="relative sm:w-[202px]">
+              <select class="h-12 w-full appearance-none rounded-xl border border-primary-100 bg-white px-5 text-sm font-medium text-primary-100 outline-none focus:ring-2 focus:ring-primary-100/30">
+                <option>Choose Domain</option>
+                <option>scissor.link</option>
+                <option>yourbrand.com</option>
+              </select>
+              <svg class="pointer-events-none absolute right-5 top-1/2 h-3 w-3 -translate-y-1/2 text-primary-100" viewBox="0 0 12 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 1 6 5 11 1" /></svg>
+            </div>
+            <input type="text" placeholder="Type Alias here" class="h-12 w-full rounded-xl border border-primary-100 px-6 text-xs font-medium text-primary-100 placeholder-primary-100 outline-none focus:ring-2 focus:ring-primary-100/30 sm:flex-1" />
+          </div>
+        </div>
+
+        <div class="mt-6 flex flex-col gap-3">
+          <button type="submit" class="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-primary-400 text-sm font-semibold text-white transition hover:bg-primary-300">
+            Trim URL
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4V2M15 16v-2M8 9h2M20 9h2M17.8 11.8 19 13M17.8 6.2 19 5M3 21l9-9M12.2 6.2 11 5" /></svg>
+          </button>
+          <p class="p-2.5 text-sm font-medium leading-5 text-primary-200">
+            By clicking TrimURL, I agree to the
+            <a href="#" class="font-bold text-primary-100">Terms of Service, Privacy Policy</a>
+            <span class="text-primary-100">and Use of Cookies.</span>
+          </p>
+        </div>
+      </form>
+    </section>
+
+    <section id="faqs" class="relative overflow-hidden bg-white px-5 py-[43px] pb-32">
+      <div aria-hidden="true" class="pointer-events-none absolute -left-60 top-24 h-[700px] w-[500px] rounded-[45%] bg-gradient-to-br from-[#e6f4ff] to-[#d9e8ff] opacity-80"></div>
+      <div aria-hidden="true" class="pointer-events-none absolute -right-60 bottom-0 h-[500px] w-[500px] rounded-[45%] bg-gradient-to-tl from-[#d9f0ff] to-transparent opacity-80"></div>
+
+      <div class="relative mx-auto max-w-[792px]">
+        <div class="mx-auto flex w-fit items-center gap-4">
+          <span class="h-12 w-0.5 bg-gradient-to-b from-navy to-transparent"></span>
+          <h2 class="text-[40px] font-bold leading-8">FAQs</h2>
+        </div>
+
+        <div id="faq-list" class="mt-16 flex flex-col gap-8">
+          <div class="faq-item border-b border-line pb-4">
+            <button type="button" class="faq-btn flex w-full items-center justify-between gap-6 text-left text-xl font-medium leading-8" aria-expanded="true">
+              How does URL shortening work?
+              <span class="faq-icon shrink-0"></span>
+            </button>
+            <p class="faq-answer mt-4 leading-8">URL shortening works by taking a long URL and creating a shorter, condensed version that redirects to the original URL. When a user clicks on the shortened link, they are redirected to the intended destination.</p>
+          </div>
+
+          <div class="faq-item border-b border-line pb-4">
+            <button type="button" class="faq-btn flex w-full items-center justify-between gap-6 text-left text-xl font-medium leading-8" aria-expanded="false">
+              Is it necessary to create an account to use the URL shortening service?
+              <span class="faq-icon shrink-0"></span>
+            </button>
+            <p class="faq-answer mt-4 hidden leading-8"></p>
+          </div>
+
+          <div class="faq-item border-b border-line pb-4">
+            <button type="button" class="faq-btn flex w-full items-center justify-between gap-6 text-left text-xl font-medium leading-8" aria-expanded="false">
+              Are the shortened links permanent? Will they expire?
+              <span class="faq-icon shrink-0"></span>
+            </button>
+            <p class="faq-answer mt-4 hidden leading-8"></p>
+          </div>
+
+          <div class="faq-item border-b border-line pb-4">
+            <button type="button" class="faq-btn flex w-full items-center justify-between gap-6 text-left text-xl font-medium leading-8" aria-expanded="false">
+              Are there any limitations on the number of URLs I can shorten?
+              <span class="faq-icon shrink-0"></span>
+            </button>
+            <p class="faq-answer mt-4 hidden leading-8"></p>
+          </div>
+
+          <div class="faq-item border-b border-line pb-4">
+            <button type="button" class="faq-btn flex w-full items-center justify-between gap-6 text-left text-xl font-medium leading-8" aria-expanded="false">
+              Can I customize the shortened URLs to reflect my brand or content?
+              <span class="faq-icon shrink-0"></span>
+            </button>
+            <p class="faq-answer mt-4 hidden leading-8"></p>
+          </div>
+
+          <div class="faq-item border-b border-line pb-4">
+            <button type="button" class="faq-btn flex w-full items-center justify-between gap-6 text-left text-xl font-medium leading-8" aria-expanded="false">
+              Can I track the performance of my shortened URLs?
+              <span class="faq-icon shrink-0"></span>
+            </button>
+            <p class="faq-answer mt-4 hidden leading-8"></p>
+          </div>
+
+          <div class="faq-item border-b border-line pb-4">
+            <button type="button" class="faq-btn flex w-full items-center justify-between gap-6 text-left text-xl font-medium leading-8" aria-expanded="false">
+              How secure is the URL shortening service? Are the shortened links protected against spam or malicious activity?
+              <span class="faq-icon shrink-0"></span>
+            </button>
+            <p class="faq-answer mt-4 hidden leading-8"></p>
+          </div>
+
+          <div class="faq-item border-b border-line pb-4">
+            <button type="button" class="faq-btn flex w-full items-center justify-between gap-6 text-left text-xl font-medium leading-8" aria-expanded="false">
+              What is a QR code and what can it do?
+              <span class="faq-icon shrink-0"></span>
+            </button>
+            <p class="faq-answer mt-4 hidden leading-8"></p>
+          </div>
+
+          <div class="faq-item border-b border-line pb-4">
+            <button type="button" class="faq-btn flex w-full items-center justify-between gap-6 text-left text-xl font-medium leading-8" aria-expanded="false">
+              Is there an API available for integrating the URL shortening service into my own applications or websites?
+              <span class="faq-icon shrink-0"></span>
+            </button>
+            <p class="faq-answer mt-4 hidden leading-8"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="relative overflow-hidden px-5 py-[109px] text-center" style="background-image: linear-gradient(to bottom, #1e3448 99.99%, rgba(30,52,72,0))">
+      <div aria-hidden="true" class="pointer-events-none absolute -left-32 -top-20 h-[330px] w-[560px] rounded-[45%] bg-[#3b6a8a]/40"></div>
+      <div aria-hidden="true" class="pointer-events-none absolute -right-20 bottom-[-120px] h-[330px] w-[520px] rounded-[45%] bg-[#3b6a8a]/40"></div>
+      <div class="relative mx-auto flex max-w-[806px] flex-col items-center gap-8">
+        <h2 class="text-3xl font-bold leading-[48px] text-white md:text-[40px]">Revolutionizing Link Optimization</h2>
+        <a href="#" class="flex h-12 w-[200px] items-center justify-center rounded-full bg-primary-400 font-semibold text-white transition hover:bg-primary-300">Get Started</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="relative overflow-hidden bg-white px-5 pb-10 pt-[95px]">
+    <div aria-hidden="true" class="pointer-events-none absolute -left-40 top-10 h-[500px] w-[560px] rounded-[45%] bg-gradient-to-br from-[#eaf4ff] to-transparent"></div>
+    <div aria-hidden="true" class="pointer-events-none absolute -right-40 bottom-0 h-[380px] w-[560px] rounded-[45%] bg-gradient-to-tl from-[#dcebff] to-transparent"></div>
+
+    <div class="relative mx-auto flex max-w-[1034px] flex-col gap-12 lg:flex-row lg:gap-6">
+      <!-- brand -->
+      <div class="flex flex-col gap-8 lg:w-[184px] lg:shrink-0">
+        <a href="#" class="flex items-center gap-2 p-2 text-ink">
+          <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3" /><line x1="3" y1="21" x2="21" y2="3" /></svg>
+          <span class="h-6 w-px bg-ink"></span>
+          <span class="text-2xl font-bold leading-8">SCISSOR</span>
+        </a>
+        <div class="flex gap-6 px-2 text-ink">
+          <a href="#" aria-label="Twitter"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" /></svg></a>
+          <a href="#" aria-label="Instagram"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" /></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" /></svg></a>
+          <a href="#" aria-label="Facebook"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg></a>
+        </div>
+      </div>
+
+      <div class="grid flex-1 grid-cols-2 gap-x-6 gap-y-14 text-neutral800 md:grid-cols-4">
+        <div class="flex flex-col gap-14">
+          <div class="px-6">
+            <h4 class="font-bold leading-6 text-neutral900">Why Scissor ?</h4>
+            <ul class="mt-2 leading-6"><li>Scissor 101</li><li>Integrations &amp; API</li><li>Pricing</li></ul>
+          </div>
+          <div class="px-6">
+            <h4 class="font-bold leading-6 text-neutral900">Resources</h4>
+            <ul class="mt-2 leading-6"><li>Blog</li><li>Resource Library</li><li>Developers</li><li>App Connectors</li><li>Support</li><li>Trust Center</li><li>Browser Extension</li><li>Mobile App</li></ul>
+          </div>
+        </div>
+        <div class="flex flex-col gap-8">
+          <div class="px-6">
+            <h4 class="font-bold leading-6 text-neutral900">Solutions</h4>
+            <ul class="mt-2 leading-6"><li>Social Media</li><li>Digital Marketing</li><li>Customer Service</li><li>For Developers</li></ul>
+          </div>
+          <div class="px-6">
+            <h4 class="font-bold leading-6 text-neutral900">Features</h4>
+            <ul class="mt-2 leading-6"><li>Branded Links</li><li>Mobile Links</li><li>Campaign Management &amp; Analytics</li><li>QR Code generation</li></ul>
+          </div>
+        </div>
+        <div class="flex flex-col gap-14">
+          <div class="px-6">
+            <h4 class="font-bold leading-6 text-neutral900">Products</h4>
+            <ul class="mt-2 leading-6"><li>Link Management</li><li>QR Codes</li><li>Link-in-bio</li></ul>
+          </div>
+          <div class="px-6">
+            <h4 class="font-bold leading-6 text-neutral900">Legal</h4>
+            <ul class="mt-2 leading-6"><li>Privacy Policy</li><li>Cookie Policy</li><li>Terms of Service</li><li>Acceptable Use Policy</li><li>Code of Conduct</li></ul>
+          </div>
+        </div>
+        <div class="px-6">
+          <h4 class="font-bold leading-6 text-neutral900">Company</h4>
+          <ul class="mt-1 leading-6"><li>About Scissor</li><li>Careers</li><li>Partners</li><li>Press</li><li>Contact</li><li>Reviews</li></ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="relative mx-auto mt-16 flex max-w-[1034px] items-center justify-center gap-2 text-sm font-medium text-neutral800 lg:justify-end">
+      <span>Term of Service</span><span class="h-3 w-px bg-neutral800"></span>
+      <span>Security</span><span class="h-3 w-px bg-neutral800"></span>
+      <span>ⓒ Scissor 2023</span>
+    </div>
+  </footer>
+
+  <script>
+    // FAQ accordion: one open at a time, plus/minus icons
+    const PLUS = '<svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>';
+    const MINUS = '<svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>';
+
+    const items = document.querySelectorAll('.faq-item');
+
+    function setOpen(item, open) {
+      item.querySelector('.faq-answer').classList.toggle('hidden', !open);
+      item.querySelector('.faq-btn').setAttribute('aria-expanded', open);
+      item.querySelector('.faq-icon').innerHTML = open ? MINUS : PLUS;
+    }
+
+    items.forEach((item) => {
+      setOpen(item, item.querySelector('.faq-btn').getAttribute('aria-expanded') === 'true');
+      item.querySelector('.faq-btn').addEventListener('click', () => {
+        const wasOpen = item.querySelector('.faq-btn').getAttribute('aria-expanded') === 'true';
+        items.forEach((i) => setOpen(i, false));
+        setOpen(item, !wasOpen);
+      });
+    });
+
+    // Trim form: placeholder behaviour (connect to your backend later)
+    document.getElementById('trim-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const url = document.getElementById('long-url').value.trim();
+      if (!url) return document.getElementById('long-url').focus();
+      alert('Trimming: ' + url);
+    });
+  </script>
+</body>
+</html>
